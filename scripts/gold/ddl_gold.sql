@@ -14,6 +14,7 @@ Usage:
 ===============================================================================
 */
 
+
 --===========================================
 --Create Dimension : gold.dim_customers
 --===========================================
@@ -59,5 +60,8 @@ go
     is_amount_outlier,
     is_orphan_account,
     is_predates_account_open
+FROM silver.bronze_transactions
+go
+
 FROM silver.bronze_transactions
 go
