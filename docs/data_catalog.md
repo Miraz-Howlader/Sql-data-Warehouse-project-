@@ -27,7 +27,7 @@ The Gold Layer is the business-level data representation, structured to support 
 
 ## 2. gold.fact_transactions
 
-* **Purpose:** Stores transactions details enriched with demographic and geographic data.
+* **Purpose:** Stores transactional data for analytical purpose.
 * **Columns:**
 
 | Column Name | Data Type | Description |
