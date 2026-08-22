@@ -20,3 +20,40 @@ Usage Notes:
 -- ============================================================================
 -- Check for Uniqueness of Customer Key in gold.dim_customers
 -- Expectation: No results
+
+SELECT 
+Customer_KEY,
+COUNT(*) AS duplicate_count
+FROM gold.dim_customers
+GROUP BY Customer_KEY
+HAVING COUNT(*) > 1;
+
+-- ====================================================================
+-- Checking 'gold.fact_transactions'
+-- ====================================================================
+-- Check for Uniqueness of transaction Key in gold.dim_products
+-- Expectation: No results
+
+SELECT 
+transaction_KEY,
+COUNT(*) AS duplicate_count
+FROM gold.fact_transactions
+GROUP BY transaction_KEY
+HAVING COUNT(*) > 1;
+
+-- ====================================================================
+-- Check Data Model Connectivity / Referential Integrity
+-- Check connectivity between Fact and Dimension using 'account_number'
+-- ====================================================================
+-- Expectation: Orphan records or missing joins (if any)
+
+SELECT 
+f.transaction_KEY,
+f.transaction_id,
+f.account_number AS fact_account_number,
+c.account_number AS dim_account_number,
+c.customer_name
+FROM gold.fact_transactions f
+LEFT JOIN gold.dim_customers c
+    ON f.account_number = c.account_number
+WHERE c.account_number IS NULL;
