@@ -32,6 +32,21 @@ The Gold Layer is the business-level data representation, structured to support 
 
 | Column Name | Data Type | Description |
 | :--- | :--- | :--- |
+| transaction_KEY | INT | Surrogate key uniquely identifying each transaction record in the fact table. |
+| transaction_id | VARCHAR(50) | Unique identifier assigned to each transaction. |
+| account_number | varchar(50) | Alphanumeric identifier representing the customer, used for tracking and referencing. |
+| transaction_date | DATE | The date of transaction of the customer account, formatted as YYYY-MM-DD (e.g., 2024-04-18). |
+| amount_signed |decimal(25,2) | The customer's deposits/refunds are inflows (+), withdrawals/payments/fees/transfers are outflows (-) (e.g., 66842.64,-8201.50). |
+| currency | varchar(50) | The currency in which the transaction was completed (e.g., 'BDT', 'USD').|
+| transaction_type | varchar(50)| which process the transaction was completed (e.g., 'Deposit', 'Payment'). |
+| channel | varchar(50) | which way the transaction was completed (e.g., 'Online','Branch'). |
+| status  | varchar(50) | status of the transaction  (e.g., 'Failed','Pending'). |
+| is_amount_missing | bit | the transaction amount is null? (e.g., 'amount is null =1','amount is not null =0').  |
+| is_amount_outlier | bit | the transaction amount is outlier? (e.g., 'amount is outlier =1','amount is not outlier =0').  |
+| is_orphan_account | bit | the account number is null? (e.g., 'account number is null =1','account number is not null =0').  |
+| is_predates_account_open | bit | the account open date is greater than transaction date and those is not null? 
+(e.g., 'opening_date>transaction_date=1','opening_date>transaction_date =0').  |
+
 
 
 
