@@ -18,7 +18,7 @@ Usage:
 --Create Dimension : gold.dim_customers
 --===========================================
 if object_id ('gold.dim_customers','V') is not null
-drop table gold.dim_customers;
+drop view gold.dim_customers;
 go
     CREATE VIEW gold.dim_customers AS
     SELECT 
@@ -41,7 +41,7 @@ go
 --Create Fact Table: gold.fact_transactions
 --===========================================
 if object_id ('gold.fact_transactions','V') is not null
-drop table gold.fact_transactions;
+drop view gold.fact_transactions;
 go
 
     CREATE VIEW gold.fact_transactions AS
