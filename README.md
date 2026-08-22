@@ -56,7 +56,7 @@ For more details, refer to
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 
-<img width="796" height="466" alt="{0B9378A8-43F3-4D04-B2FE-1EDE2EEDDE4D}" src="https://github.com/user-attachments/assets/c5ec1697-9225-4b48-bb92-993ff3a058f1" />
+<img width="899" height="527" alt="{08BF56C4-7F0A-4765-8D75-A25CA6688106}" src="https://github.com/user-attachments/assets/45812810-dde8-4201-b33a-3163f83fe0ff" />
 
 
 1. **Bronze Layer:** Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
