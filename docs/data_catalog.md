@@ -27,7 +27,7 @@ The Gold Layer is the business-level data representation, structured to support 
 
 ## 2. gold.fact_transactions
 
-* **Purpose:** Stores customer transactions details enriched with demographic and geographic data.
+* **Purpose:** Stores transactions details enriched with demographic and geographic data.
 * **Columns:**
 
 | Column Name | Data Type | Description |
@@ -44,8 +44,7 @@ The Gold Layer is the business-level data representation, structured to support 
 | is_amount_missing | bit | the transaction amount is null? (e.g., 'amount is null =1','amount is not null =0').  |
 | is_amount_outlier | bit | the transaction amount is outlier? (e.g., 'amount is outlier =1','amount is not outlier =0').  |
 | is_orphan_account | bit | the account number is null? (e.g., 'account number is null =1','account number is not null =0').  |
-| is_predates_account_open | bit | the account open date is greater than transaction date and those is not null? 
-(e.g., 'opening_date>transaction_date=1','opening_date>transaction_date =0').  |
+| is_predates_account_open | bit | open date > transaction date and those is not null? (e.g., 'true=1','false =0').  |
 
 
 
